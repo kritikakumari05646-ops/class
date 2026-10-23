@@ -1,0 +1,28 @@
+#Rock paper scissors 
+import random
+
+print("Welcome to Rock Paper Scissors Game")
+
+choices = ["rock", "paper", "scissors"]
+
+user = input("Enter rock, paper or scissors: ").lower()
+computer = random.choice(choices)
+
+print("Computer:", computer)
+
+#tie case
+if user == computer:
+    print("Its a Tie")
+          
+#Your winning cases
+elif user == "rock" and computer == "scissors":
+          print("You win")
+elif user == "paper" and computer == "rock":
+          print("You win")
+elif user == "scissors" and computer == "paper":
+          print("You win")
+#Computer winnning
+elif computer == "rock" and user == "scissors":
+    print("Computer wins")
+else:
+  print("Invalid Input")
