@@ -1,0 +1,94 @@
+#TYPING PARAGRAPH
+import time
+
+paragraph = """
+ Pyhton is one of the most popular programming languages in the world.
+ It is simple to learn, easy to read, and widelyused for web development,
+ data science, artificial intelligence, automation, and software development .
+ Practicing typing regularly helps improve Typing speed.
+ """
+print ("=" * 70)
+print("        PYTHON TYPING SPEED TEST       ")
+print("=" * 70)
+
+print("\nType the following paragraph exactly as shown.\n")
+print(paragraph)
+input("\nPress Enter when you are ready to start......")
+print("\nStart Typing Below:\n")
+
+#Start Timer
+start_time = time.time()
+typed_text = input()
+
+#End timer
+end_time = time.time()
+
+
+#-------------------------------
+
+#Time Calculation
+
+#------------------------------
+time_taken = end_time - start_time
+
+# #--------------------------
+# #Word calculation
+# #--------------------------
+original_words = paragraph.strip().split()
+typed_words = typed_text.strip().split()
+
+total_words = len(typed_words)
+correct_words = 0
+
+for i in range(min(len(original_words), len(typed_words))):
+    if original_words[i] == typed_words[1]:
+        correct_words += 1
+
+# #---------------------------
+# #Accuracy Calculation
+# #---------------------------
+
+if len(original_words) > 0:
+    accuracy = (correct_words / len(original_words)) * 100
+else:
+    accuracy = 0
+    
+# #----------------------------
+# #Typing Speed(Words Per Mintue)
+# #----------------------------
+
+minutes = time_taken / 60
+if minutes > 0:
+    wpm = total_words / minutes
+else:
+    wpm = 0
+
+#----------------
+#Result
+#----------------
+
+print("\n" + "=" * 70)
+print("                 Result          ")
+print("=" * 70)
+
+print(f"Time Taken          : {time_taken :.2f} seconds")
+print(f"Correct words       : {correct_words}")
+print(f"Total Words Typed   : {total_words}")
+print(f"Typing Speed        : {wpm :.2f} WPM ")
+print(f"Accuracy           : {accuracy :.2f}%")
+
+print("=" * 70)
+
+#-------------------------
+# Performance Ratimg
+# --------------------------
+if wpm >= 70:
+     print("Excellent Typing Speed!")
+elif wpm >= 50:
+     print("Very Good!")
+elif wpm >= 35:
+     print("Good Job!")
+elif wpm >= 20:
+     print("Keep Practising !")
+else:
+     print("Practice Daily to Improve Your Speed!")
